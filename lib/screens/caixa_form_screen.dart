@@ -15,9 +15,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
-
-import '../data/caixa_repository.dart';
-import '../models/caixa.dart';
+import 'package:roleta/data/caixa_repository.dart';
+import 'package:roleta/l10n/app_localizations.dart';
+import 'package:roleta/models/caixa.dart';
 
 class CaixaFormScreen extends StatefulWidget {
   const CaixaFormScreen({super.key, required this.repository, this.caixa});
@@ -56,6 +56,7 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
   }
 
   Future<void> _salvar() async {
+    final l10n = AppLocalizations.of(context)!;
     final nome = _nomeController.text.trim();
     final palavras = _palavraControllers
         .map((c) => c.text.trim())
@@ -63,11 +64,11 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
         .toList();
 
     if (nome.isEmpty) {
-      _mostrarErro('Informe um nome para a roleta.');
+      _mostrarErro(l10n.errorNameEmpty);
       return;
     }
     if (palavras.isEmpty) {
-      _mostrarErro('Adicione pelo menos uma palavra.');
+      _mostrarErro(l10n.errorWordEmpty);
       return;
     }
 
@@ -97,19 +98,20 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
   }
 
   Future<void> _confirmarExcluirPalavra(int index) async {
+    final l10n = AppLocalizations.of(context)!;
     final confirmar = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Excluir palavra?'),
-        content: const Text('Esta palavra será removida da roleta.'),
+        title: Text(l10n.deleteWordTitle),
+        content: Text(l10n.deleteWordMessage),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancelar'),
+            child: Text(l10n.cancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Excluir'),
+            child: Text(l10n.delete),
           ),
         ],
       ),
@@ -124,11 +126,12 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(_editando ? 'Editar roleta' : 'Nova roleta'),
+        title: Text(_editando ? l10n.formTitleEdit : l10n.formTitleNew),
         actions: [
-          TextButton(onPressed: _salvar, child: const Text('Salvar')),
+          TextButton(onPressed: _salvar, child: Text(l10n.save)),
         ],
       ),
       body: ListView(
@@ -136,19 +139,19 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
         children: [
           TextField(
             controller: _nomeController,
-            decoration: const InputDecoration(
-              labelText: 'Nome da roleta',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: l10n.nameLabel,
+              border: const OutlineInputBorder(),
             ),
             textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 24),
           Row(
             children: [
-              const Expanded(
+              Expanded(
                 child: Text(
-                  'Palavras',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  l10n.wordsLabel,
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
               TextButton.icon(
@@ -156,7 +159,7 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
                   () => _palavraControllers.add(TextEditingController()),
                 ),
                 icon: const Icon(Icons.add),
-                label: const Text('Adicionar'),
+                label: Text(l10n.add),
               ),
             ],
           ),
@@ -170,13 +173,13 @@ class _CaixaFormScreenState extends State<CaixaFormScreen> {
                     child: TextField(
                       controller: _palavraControllers[i],
                       decoration: InputDecoration(
-                        labelText: 'Palavra ${i + 1}',
+                        labelText: l10n.wordLabel(i + 1),
                         border: const OutlineInputBorder(),
                       ),
                     ),
                   ),
                   IconButton(
-                    tooltip: 'Excluir palavra',
+                    tooltip: l10n.deleteWordTooltip,
                     onPressed: () => _confirmarExcluirPalavra(i),
                     icon: const Icon(Icons.delete_outline),
                   ),
