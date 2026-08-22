@@ -15,7 +15,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +22,8 @@ import 'package:roleta/data/app_preferences.dart';
 import 'package:roleta/data/caixa_repository.dart';
 import 'package:roleta/l10n/app_localizations.dart';
 import 'package:roleta/services/backup_service.dart';
+import 'package:roleta/services/backup_share_service.dart' as backup_share;
 import 'package:roleta/widgets/confirm_dialog.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -99,12 +98,7 @@ class SettingsScreen extends StatelessWidget {
   Future<void> _compartilhar(
       BuildContext context, AppLocalizations l10n, String json) async {
     try {
-      final dir = Directory.systemTemp;
-      final arquivo = File('${dir.path}/roleta_backup.json');
-      await arquivo.writeAsString(json);
-      await SharePlus.instance.share(
-        ShareParams(files: [XFile(arquivo.path)], subject: l10n.exportSubject),
-      );
+      await backup_share.compartilharBackup(json, l10n.exportSubject);
     } catch (_) {
       if (context.mounted) _mostrarMensagem(context, l10n.exportError);
     }
