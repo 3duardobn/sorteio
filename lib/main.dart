@@ -14,6 +14,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 // SPDX-License-Identifier: GPL-3.0-only
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:roleta/l10n/app_localizations.dart';
 
@@ -22,6 +23,9 @@ import 'data/caixa_repository.dart';
 import 'data/settings_repository.dart';
 import 'screens/home_screen.dart';
 import 'theme.dart';
+
+const _larguraMaximaWeb = 600.0;
+const _margemLateralWeb = 16.0;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,6 +69,23 @@ class _RoletaAppState extends State<RoletaApp> {
         locale: widget.settings.locale,
         supportedLocales: AppLocalizations.supportedLocales,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
+        builder: (context, child) {
+          if (!kIsWeb || child == null) return child!;
+          return ColoredBox(
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: _margemLateralWeb),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxWidth: _larguraMaximaWeb,
+                  ),
+                  child: child,
+                ),
+              ),
+            ),
+          );
+        },
         home: HomeScreen(
           repository: widget.repository,
           settings: widget.settings,
