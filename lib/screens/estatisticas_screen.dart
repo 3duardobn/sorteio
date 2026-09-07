@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -15,8 +15,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/models/caixa.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/models/caixa.dart';
 
 class EstatisticasScreen extends StatelessWidget {
   const EstatisticasScreen({super.key, required this.caixa});

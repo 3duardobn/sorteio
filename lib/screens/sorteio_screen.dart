@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -18,14 +18,14 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/models/caixa.dart';
-import 'package:roleta/services/shake_detector.dart';
-import 'package:roleta/services/sorteio_service.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/models/caixa.dart';
+import 'package:sorteio/services/shake_detector.dart';
+import 'package:sorteio/services/sorteio_service.dart';
 
-class RoletaScreen extends StatefulWidget {
-  const RoletaScreen({
+class SorteioScreen extends StatefulWidget {
+  const SorteioScreen({
     super.key,
     required this.caixa,
     required this.repository,
@@ -41,10 +41,10 @@ class RoletaScreen extends StatefulWidget {
   final ShakeDetector Function()? shakeDetectorBuilder;
 
   @override
-  State<RoletaScreen> createState() => _RoletaScreenState();
+  State<SorteioScreen> createState() => _SorteioScreenState();
 }
 
-class _RoletaScreenState extends State<RoletaScreen> {
+class _SorteioScreenState extends State<SorteioScreen> {
   final _random = Random();
   Timer? _timer;
   ShakeDetector? _shake;

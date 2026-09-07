@@ -41,7 +41,7 @@ jobs:
         run: flutter test
 
       - name: Build web (release)
-        run: flutter build web --release --base-href /roleta/
+        run: flutter build web --release --base-href /sorteio/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

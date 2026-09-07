@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -16,11 +16,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/data/app_preferences.dart';
-import 'package:roleta/data/settings_repository.dart';
-import 'package:roleta/main.dart';
-import 'package:roleta/models/caixa.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/data/app_preferences.dart';
+import 'package:sorteio/data/settings_repository.dart';
+import 'package:sorteio/main.dart';
+import 'package:sorteio/models/caixa.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -36,7 +36,7 @@ void main() {
   Future<void> bombearApp(WidgetTester tester, CaixaRepository repo) async {
     tester.binding.platformDispatcher.localesTestValue = [const Locale('pt')];
     await tester.pumpWidget(
-      RoletaApp(
+      SorteioApp(
         repository: repo,
         settings: AppPreferences(SettingsRepository()),
       ),
@@ -44,7 +44,7 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('home exibe as roletas salvas', (tester) async {
+  testWidgets('home exibe os sorteios salvos', (tester) async {
     final repo = CaixaRepository();
     await repo.salvarTodas([
       Caixa.nova(nome: 'Jantares', palavras: ['Pizza', 'Sushi']),
@@ -56,12 +56,12 @@ void main() {
     expect(find.text('2 palavras'), findsOneWidget);
   });
 
-  testWidgets('home vazia mostra mensagem para criar roleta', (tester) async {
+  testWidgets('home vazia mostra mensagem para criar sorteio', (tester) async {
     final repo = CaixaRepository();
 
     await bombearApp(tester, repo);
 
-    expect(find.textContaining('Nenhuma roleta ainda'), findsOneWidget);
+    expect(find.textContaining('Nenhum sorteio ainda'), findsOneWidget);
   });
 
   testWidgets('excluir caixa pede confirmação', (tester) async {
@@ -77,7 +77,7 @@ void main() {
     await tester.tap(find.text('Excluir'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Excluir caixa?'), findsOneWidget);
+    expect(find.text('Excluir sorteio?'), findsOneWidget);
 
     await tester.tap(find.widgetWithText(FilledButton, 'Excluir'));
     await tester.pumpAndSettle();
@@ -138,14 +138,14 @@ void main() {
     await settings.salvarIdioma(const Locale('en'));
 
     await tester.pumpWidget(
-      RoletaApp(
+      SorteioApp(
         repository: repo,
         settings: AppPreferences(settings),
       ),
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Roulettes'), findsOneWidget);
+    expect(find.text('Draws'), findsOneWidget);
     expect(find.text('1 word'), findsOneWidget);
   });
 }

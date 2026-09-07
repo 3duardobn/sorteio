@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -15,7 +15,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
-import 'package:roleta/l10n/app_localizations.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
 
 /// Mostra um diálogo de confirmação padrão. Retorna `true` somente se o
 /// usuário confirmar.

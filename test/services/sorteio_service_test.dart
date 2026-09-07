@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:roleta/services/sorteio_service.dart';
+import 'package:sorteio/services/sorteio_service.dart';
 
 void main() {
   const service = SorteioService();

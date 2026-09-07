@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -16,10 +16,10 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/models/caixa.dart';
-import 'package:roleta/screens/caixa_form_screen.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/models/caixa.dart';
+import 'package:sorteio/screens/caixa_form_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -54,7 +54,7 @@ void main() {
     await tester.pump();
 
     expect(find.byType(CaixaFormScreen), findsOneWidget);
-    expect(find.text('Informe um nome para a roleta.'), findsOneWidget);
+    expect(find.text('Informe um nome para o sorteio.'), findsOneWidget);
     expect(await repo.carregarTodas(), isEmpty);
   });
 
@@ -63,7 +63,7 @@ void main() {
     await bombear(tester, repo);
 
     await tester.enterText(
-        find.widgetWithText(TextField, 'Nome da roleta'), 'Minha roleta');
+        find.widgetWithText(TextField, 'Nome do sorteio'), 'Meu sorteio');
     await tester.tap(find.text('Salvar'));
     await tester.pump();
 
@@ -77,7 +77,7 @@ void main() {
     await bombear(tester, repo);
 
     await tester.enterText(
-        find.widgetWithText(TextField, 'Nome da roleta'), 'Jantares');
+        find.widgetWithText(TextField, 'Nome do sorteio'), 'Jantares');
     await tester.enterText(
         find.widgetWithText(TextField, 'Palavra 1'), 'Pizza');
     await tester.tap(find.text('Adicionar'));
@@ -102,7 +102,7 @@ void main() {
     await bombear(tester, repo, caixa: original);
 
     await tester.enterText(
-        find.widgetWithText(TextField, 'Nome da roleta'), 'Nova');
+        find.widgetWithText(TextField, 'Nome do sorteio'), 'Nova');
     await tester.tap(find.text('Salvar'));
     await tester.pumpAndSettle();
 

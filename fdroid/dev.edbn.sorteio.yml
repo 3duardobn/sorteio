@@ -1,9 +1,9 @@
-# F-Droid metadata for Roleta.
+# F-Droid metadata for Sorteio.
 #
 # This file is NOT read from this repo — F-Droid metadata lives in their
 # fdroiddata repository. To submit:
 #   1. Fork https://gitlab.com/fdroid/fdroiddata
-#   2. Copy this file to metadata/dev.edbn.roleta.yml
+#   2. Copy this file to metadata/dev.edbn.sorteio.yml
 #   3. Open a Merge Request
 # After the MR is merged, new `v*` tags are picked up automatically
 # (AutoUpdateMode: Version). App descriptions/icon come from the
@@ -14,15 +14,15 @@ Categories:
   - Education
 License: GPL-3.0-only
 AuthorName: eduardobn
-WebSite: https://edbn.dev/projetos/roleta/
-SourceCode: https://github.com/3duardobn/roleta
-IssueTracker: https://github.com/3duardobn/roleta/issues
-Changelog: https://github.com/3duardobn/roleta/releases
+WebSite: https://edbn.dev/projetos/sorteio/
+SourceCode: https://github.com/3duardobn/sorteio
+IssueTracker: https://github.com/3duardobn/sorteio/issues
+Changelog: https://github.com/3duardobn/sorteio/releases
 
-AutoName: Roleta
+AutoName: Sorteio
 
 RepoType: git
-Repo: https://github.com/3duardobn/roleta.git
+Repo: https://github.com/3duardobn/sorteio.git
 
 Builds:
   - versionName: 1.0.0

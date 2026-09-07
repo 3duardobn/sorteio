@@ -1,19 +1,3 @@
-// Roleta
-// Copyright (C) 2026 Eduardo Barroso Nunes
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
-//
-// SPDX-License-Identifier: GPL-3.0-only
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -25,10 +9,10 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get homeTitle => 'Roletas';
+  String get homeTitle => 'Sorteios';
 
   @override
-  String get newRoulette => 'Nova roleta';
+  String get newDraw => 'Novo sorteio';
 
   @override
   String get themeSystem => 'Sistema';
@@ -41,7 +25,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get emptyState =>
-      'Nenhuma roleta ainda.\nToque em \"Nova roleta\" para criar uma.';
+      'Nenhum sorteio ainda.\nToque em \"Novo sorteio\" para criar um.';
 
   @override
   String wordCount(int count) {
@@ -62,10 +46,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get delete => 'Excluir';
 
   @override
-  String get deleteRouletteTitle => 'Excluir caixa?';
+  String get deleteDrawTitle => 'Excluir sorteio?';
 
   @override
-  String deleteRouletteMessage(String name) {
+  String deleteDrawMessage(String name) {
     return 'Tem certeza que deseja excluir \"$name\"? Esta ação não pode ser desfeita.';
   }
 
@@ -76,16 +60,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settingsTitle => 'Configurações';
 
   @override
-  String get formTitleNew => 'Nova roleta';
+  String get formTitleNew => 'Novo sorteio';
 
   @override
-  String get formTitleEdit => 'Editar roleta';
+  String get formTitleEdit => 'Editar sorteio';
 
   @override
   String get save => 'Salvar';
 
   @override
-  String get nameLabel => 'Nome da roleta';
+  String get nameLabel => 'Nome do sorteio';
 
   @override
   String get wordsLabel => 'Palavras';
@@ -105,10 +89,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get deleteWordTitle => 'Excluir palavra?';
 
   @override
-  String get deleteWordMessage => 'Esta palavra será removida da roleta.';
+  String get deleteWordMessage => 'Esta palavra será removida do sorteio.';
 
   @override
-  String get errorNameEmpty => 'Informe um nome para a roleta.';
+  String get errorNameEmpty => 'Informe um nome para o sorteio.';
 
   @override
   String get errorWordEmpty => 'Adicione pelo menos uma palavra.';
@@ -118,7 +102,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get noWords =>
-      'Esta roleta não tem palavras.\nEdite-a para adicionar.';
+      'Este sorteio não tem palavras.\nEdite-o para adicionar.';
 
   @override
   String get draw => 'Sortear';
@@ -146,7 +130,7 @@ class AppLocalizationsPt extends AppLocalizations {
       'Este é um projeto de código livre, licenciado sob a GNU GPL-3.0. As artes do aplicativo são de domínio público (CC0 1.0).';
 
   @override
-  String get licenseGithub => 'github.com/3duardobn/roleta';
+  String get licenseGithub => 'github.com/3duardobn/sorteio';
 
   @override
   String get contactSection => 'Contato';
@@ -165,7 +149,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get backupSub =>
-      'Salve ou compartilhe suas roletas como arquivo JSON.';
+      'Salve ou compartilhe seus sorteios como arquivo JSON.';
 
   @override
   String get export => 'Fazer backup';
@@ -177,10 +161,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get exportSave => 'Salvar arquivo';
 
   @override
-  String get exportSubject => 'Backup do aplicativo Roleta';
+  String get exportSubject => 'Backup do aplicativo Sorteio';
 
   @override
-  String get exportEmpty => 'Não há roletas para fazer backup.';
+  String get exportEmpty => 'Não há sorteios para fazer backup.';
 
   @override
   String get exportSuccess => 'Backup salvo.';
@@ -199,10 +183,10 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Este backup contém $count roletas.',
-      one: 'Este backup contém 1 roleta.',
+      other: 'Este backup contém $count sorteios.',
+      one: 'Este backup contém 1 sorteio.',
     );
-    return '$_temp0 As roletas atuais serão substituídas. Continuar?';
+    return '$_temp0 Os sorteios atuais serão substituídos. Continuar?';
   }
 
   @override
@@ -210,8 +194,8 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Backup restaurado: $count roletas.',
-      one: 'Backup restaurado: 1 roleta.',
+      other: 'Backup restaurado: $count sorteios.',
+      one: 'Backup restaurado: 1 sorteio.',
     );
     return '$_temp0';
   }
@@ -262,7 +246,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get deactivateSub =>
-      'Cada sorteio remove a palavra da roleta, como um sorteio que vai diminuindo.';
+      'Cada sorteio remove a palavra do sorteio, como um sorteio que vai diminuindo.';
 
   @override
   String get allWordsDrawn => 'Todas as palavras foram sorteadas. Recomeçando!';

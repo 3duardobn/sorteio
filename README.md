@@ -1,15 +1,15 @@
-# Roleta
+# Sorteio
 
 [![License: GPL-3.0](https://img.shields.io/badge/Licença-GPL--3.0-blue.svg)](LICENSE)
-[![F-Droid](https://img.shields.io/f-droid/v/dev.edbn.roleta.svg)](https://f-droid.org/packages/dev.edbn.roleta/)
+[![F-Droid](https://img.shields.io/f-droid/v/dev.edbn.sorteio.svg)](https://f-droid.org/packages/dev.edbn.sorteio/)
 [![Flutter](https://img.shields.io/badge/Flutter-3.41+-02569B.svg)](https://flutter.dev)
 
-Um aplicativo Flutter (Android) para sortear palavras. Crie "roletas" (caixas) com nome e uma lista de palavras, edite quando quiser e sorteie uma palavra aleatória — pelo botão ou agitando o celular.
+Um aplicativo Flutter (Android) para sortear palavras. Crie "sorteios" (caixas) com nome e uma lista de palavras, edite quando quiser e sorteie uma palavra aleatória — pelo botão ou agitando o celular.
 
 ## Baixar
 
-- **F-Droid**: [dev.edbn.roleta](https://f-droid.org/packages/dev.edbn.roleta/) (ou busque "Roleta" no cliente F-Droid)
-- **APK**: baixe a última tag `v*` em [Releases](https://github.com/3duardobn/roleta/releases)
+- **F-Droid**: [dev.edbn.sorteio](https://f-droid.org/packages/dev.edbn.sorteio/) (ou busque "Sorteio" no cliente F-Droid)
+- **APK**: baixe a última tag `v*` em [Releases](https://github.com/3duardobn/sorteio/releases)
 
 <!-- Sugestão: adicione screenshots aqui
 | Sorteio | Edição | Estatísticas |
@@ -19,16 +19,16 @@ Um aplicativo Flutter (Android) para sortear palavras. Crie "roletas" (caixas) c
 
 ## Funcionalidades
 
-- **Múltiplas roletas**: crie quantas quiser, cada uma com nome e lista própria de palavras.
+- **Múltiplos sorteios**: crie quantos quiser, cada um com nome e lista própria de palavras.
 - **Persistência local**: tudo fica salvo no dispositivo (`shared_preferences`), sem necessidade de conta ou internet.
-- **Editar e excluir**: adicione/remova palavras e renomeie a roleta a qualquer momento, com confirmação antes de excluir.
+- **Editar e excluir**: adicione/remova palavras e renomeie o sorteio a qualquer momento, com confirmação antes de excluir.
 - **Sorteio com efeito de flash**: as palavras alternam rapidamente (acelerando e desacelerando, ~2,3 s) até parar na palavra sorteada.
 - **Botão ou gesto**: sortei pelo botão **Sortear** ou agitando o celular (acelerômetro via `sensors_plus`).
 - **Tema claro/escuro**: opções Sistema / Claro / Escuro, preferência salva.
 - **Idiomas**: português, inglês e espanhol, ou padrão do sistema, escolhido na tela de Configurações.
-- **Estatísticas por roleta**: veja quantas vezes cada palavra foi sorteada, na ordem das mais sorteadas.
-- **Opções de sorteio**: evite repetir a última palavra sorteada e/ou remova cada palavra sorteada da roleta (sorteio que vai diminuindo, recomeçando ao acabar).
-- **Backup em JSON**: exporte suas roletas (compartilhando ou salvando um arquivo `.json`) e restaure-as quando quiser.
+- **Estatísticas por sorteio**: veja quantas vezes cada palavra foi sorteada, na ordem das mais sorteadas.
+- **Opções de sorteio**: evite repetir a última palavra sorteada e/ou remova cada palavra sorteada do sorteio (sorteio que vai diminuindo, recomeçando ao acabar).
+- **Backup em JSON**: exporte seus sorteios (compartilhando ou salvando um arquivo `.json`) e restaure-os quando quiser.
 - **Sem anúncios, sem rastreamento, sem coleta de dados**: os dados ficam só no dispositivo.
 
 ## Requisitos
@@ -70,9 +70,9 @@ lib/
     caixa_repository.dart        # persistência (shared_preferences)
     settings_repository.dart     # preferências persistidas
   screens/
-    home_screen.dart             # lista de roletas
-    caixa_form_screen.dart       # criar/editar roleta
-    roleta_screen.dart           # tela de sorteio
+    home_screen.dart             # lista de sorteios
+    caixa_form_screen.dart       # criar/editar sorteio
+    sorteio_screen.dart          # tela de sorteio
     settings_screen.dart         # configurações (idioma, backup, licença, contato)
   services/
     sorteio_service.dart         # lógica de sorteio (testável)
@@ -88,7 +88,7 @@ fastlane/                        # descrições, changelogs e ícone da loja
 
 ## Publicação no F-Droid
 
-O metadado de build vive em [`fdroid/dev.edbn.roleta.yml`](fdroid/dev.edbn.roleta.yml) — copie-o para o repositório [`fdroiddata`](https://gitlab.com/fdroid/fdroiddata) (em `metadata/`) e abra um Merge Request. Depois de aceito, novas tags `v*` são publicadas automaticamente.
+O metadado de build vive em [`fdroid/dev.edbn.sorteio.yml`](fdroid/dev.edbn.sorteio.yml) — copie-o para o repositório [`fdroiddata`](https://gitlab.com/fdroid/fdroiddata) (em `metadata/`) e abra um Merge Request. Depois de aceito, novas tags `v*` são publicadas automaticamente.
 
 - Versões são definidas em `pubspec.yaml` (`version: 1.0.0+1`) e builds usam tags `v1.0.0`, `v1.0.1`, ...
 - Descrições, changelogs e ícone da loja ficam em [`fastlane/metadata/android/`](fastlane/metadata/android) (pt-BR, en-US e es).

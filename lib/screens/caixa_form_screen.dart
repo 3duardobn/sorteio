@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -15,10 +15,10 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/models/caixa.dart';
-import 'package:roleta/widgets/confirm_dialog.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/models/caixa.dart';
+import 'package:sorteio/widgets/confirm_dialog.dart';
 
 class CaixaFormScreen extends StatefulWidget {
   const CaixaFormScreen({super.key, required this.repository, this.caixa});

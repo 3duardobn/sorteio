@@ -1,4 +1,4 @@
-# Roleta
+# Sorteio
 # Copyright (C) 2026 Eduardo Barroso Nunes
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,8 +14,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 # SPDX-License-Identifier: GPL-3.0-only
-name: roleta
-description: "Roleta de palavras — sorteie uma palavra de uma lista salva no dispositivo."
+name: sorteio
+description: "Sorteio de palavras — sorteie uma palavra de uma lista salva no dispositivo."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -82,7 +82,7 @@ flutter:
 
 flutter_launcher_icons:
   android: true
-  image_path: "assets/icons/icon_roleta.png"
+  image_path: "assets/icons/icon_sorteio.png"
 
   # To add assets to your application, add an assets section, like this:
   # assets:

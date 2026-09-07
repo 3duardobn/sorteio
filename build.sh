@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Roleta
+# Sorteio
 # Copyright (C) 2026 Eduardo Barroso Nunes
 #
 # This program is free software: you can redistribute it and/or modify

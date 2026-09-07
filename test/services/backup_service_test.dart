@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -15,8 +15,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter_test/flutter_test.dart';
-import 'package:roleta/models/caixa.dart';
-import 'package:roleta/services/backup_service.dart';
+import 'package:sorteio/models/caixa.dart';
+import 'package:sorteio/services/backup_service.dart';
 
 void main() {
   const service = BackupService();
@@ -28,7 +28,7 @@ void main() {
 
     final json = service.gerarJson(caixas);
 
-    expect(json, contains('"app": "roleta"'));
+    expect(json, contains('"app": "sorteio"'));
     expect(json, contains('"version": 1'));
     expect(json, contains('"caixas"'));
   });
@@ -64,7 +64,7 @@ void main() {
 
   test('importar lança exceção sem lista de caixas', () {
     expect(
-      () => service.importar('{"app": "roleta"}'),
+      () => service.importar('{"app": "sorteio"}'),
       throwsA(isA<BackupException>()),
     );
   });
@@ -72,7 +72,7 @@ void main() {
   test('importar tolera caixas com formato legado (sem contagens/opções)', () {
     final json =
         '[{"id": "1", "nome": "N", "palavras": ["a", "b"]}]';
-    final wrapper = '{"app": "roleta", "version": 1, "caixas": $json}';
+    final wrapper = '{"app": "sorteio", "version": 1, "caixas": $json}';
 
     final importadas = service.importar(wrapper);
 

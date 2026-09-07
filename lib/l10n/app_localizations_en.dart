@@ -1,19 +1,3 @@
-// Roleta
-// Copyright (C) 2026 Eduardo Barroso Nunes
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
-//
-// SPDX-License-Identifier: GPL-3.0-only
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -25,10 +9,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get homeTitle => 'Roulettes';
+  String get homeTitle => 'Draws';
 
   @override
-  String get newRoulette => 'New roulette';
+  String get newDraw => 'New draw';
 
   @override
   String get themeSystem => 'System';
@@ -40,8 +24,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get themeDark => 'Dark';
 
   @override
-  String get emptyState =>
-      'No roulettes yet.\nTap \"New roulette\" to create one.';
+  String get emptyState => 'No draws yet.\nTap \"New draw\" to create one.';
 
   @override
   String wordCount(int count) {
@@ -62,10 +45,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get delete => 'Delete';
 
   @override
-  String get deleteRouletteTitle => 'Delete roulette?';
+  String get deleteDrawTitle => 'Delete draw?';
 
   @override
-  String deleteRouletteMessage(String name) {
+  String deleteDrawMessage(String name) {
     return 'Are you sure you want to delete \"$name\"? This action cannot be undone.';
   }
 
@@ -76,16 +59,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsTitle => 'Settings';
 
   @override
-  String get formTitleNew => 'New roulette';
+  String get formTitleNew => 'New draw';
 
   @override
-  String get formTitleEdit => 'Edit roulette';
+  String get formTitleEdit => 'Edit draw';
 
   @override
   String get save => 'Save';
 
   @override
-  String get nameLabel => 'Roulette name';
+  String get nameLabel => 'Draw name';
 
   @override
   String get wordsLabel => 'Words';
@@ -105,11 +88,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteWordTitle => 'Delete word?';
 
   @override
-  String get deleteWordMessage =>
-      'This word will be removed from the roulette.';
+  String get deleteWordMessage => 'This word will be removed from the draw.';
 
   @override
-  String get errorNameEmpty => 'Enter a name for the roulette.';
+  String get errorNameEmpty => 'Enter a name for the draw.';
 
   @override
   String get errorWordEmpty => 'Add at least one word.';
@@ -118,7 +100,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get drawnMessage => 'Word drawn!';
 
   @override
-  String get noWords => 'This roulette has no words.\nEdit it to add some.';
+  String get noWords => 'This draw has no words.\nEdit it to add some.';
 
   @override
   String get draw => 'Draw';
@@ -146,7 +128,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'This is a free-code project, licensed under the GNU GPL-3.0. The app artworks are public domain (CC0 1.0).';
 
   @override
-  String get licenseGithub => 'github.com/3duardobn/roleta';
+  String get licenseGithub => 'github.com/3duardobn/sorteio';
 
   @override
   String get contactSection => 'Contact';
@@ -164,7 +146,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupSection => 'Backup';
 
   @override
-  String get backupSub => 'Save or share your roulettes as a JSON file.';
+  String get backupSub => 'Save or share your draws as a JSON file.';
 
   @override
   String get export => 'Make a backup';
@@ -176,10 +158,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get exportSave => 'Save file';
 
   @override
-  String get exportSubject => 'Roleta app backup';
+  String get exportSubject => 'Sorteio app backup';
 
   @override
-  String get exportEmpty => 'There are no roulettes to back up.';
+  String get exportEmpty => 'There are no draws to back up.';
 
   @override
   String get exportSuccess => 'Backup saved.';
@@ -198,10 +180,10 @@ class AppLocalizationsEn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'This backup contains $count roulettes.',
-      one: 'This backup contains 1 roulette.',
+      other: 'This backup contains $count draws.',
+      one: 'This backup contains 1 draw.',
     );
-    return '$_temp0 Your current roulettes will be replaced. Continue?';
+    return '$_temp0 Your current draws will be replaced. Continue?';
   }
 
   @override
@@ -209,8 +191,8 @@ class AppLocalizationsEn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Backup restored: $count roulettes.',
-      one: 'Backup restored: 1 roulette.',
+      other: 'Backup restored: $count draws.',
+      one: 'Backup restored: 1 draw.',
     );
     return '$_temp0';
   }
@@ -260,7 +242,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deactivateSub =>
-      'Each draw removes the word from the roulette, like a raffle that shrinks.';
+      'Each draw removes the word from the draw, like a raffle that shrinks.';
 
   @override
   String get allWordsDrawn => 'All words have been drawn. Restarting!';

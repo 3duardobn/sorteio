@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:roleta/l10n/app_localizations.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
 
 import 'data/app_preferences.dart';
 import 'data/caixa_repository.dart';
@@ -29,14 +29,14 @@ const _margemLateralWeb = 16.0;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(RoletaApp(
+  runApp(SorteioApp(
     repository: CaixaRepository(),
     settings: AppPreferences(SettingsRepository()),
   ));
 }
 
-class RoletaApp extends StatefulWidget {
-  const RoletaApp({
+class SorteioApp extends StatefulWidget {
+  const SorteioApp({
     super.key,
     required this.repository,
     required this.settings,
@@ -46,10 +46,10 @@ class RoletaApp extends StatefulWidget {
   final AppPreferences settings;
 
   @override
-  State<RoletaApp> createState() => _RoletaAppState();
+  State<SorteioApp> createState() => _SorteioAppState();
 }
 
-class _RoletaAppState extends State<RoletaApp> {
+class _SorteioAppState extends State<SorteioApp> {
   @override
   void initState() {
     super.initState();
@@ -61,7 +61,7 @@ class _RoletaAppState extends State<RoletaApp> {
     return ListenableBuilder(
       listenable: widget.settings,
       builder: (context, _) => MaterialApp(
-        title: 'Roleta',
+        title: 'Sorteio',
         debugShowCheckedModeBanner: false,
         theme: buildLightTheme(),
         darkTheme: buildDarkTheme(),

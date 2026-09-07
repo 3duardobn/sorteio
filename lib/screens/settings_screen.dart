@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -18,12 +18,12 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:roleta/data/app_preferences.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/services/backup_service.dart';
-import 'package:roleta/services/backup_share_service.dart' as backup_share;
-import 'package:roleta/widgets/confirm_dialog.dart';
+import 'package:sorteio/data/app_preferences.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/services/backup_service.dart';
+import 'package:sorteio/services/backup_share_service.dart' as backup_share;
+import 'package:sorteio/widgets/confirm_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -49,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
     }
   }
 
-  Future<void> _abrirGitHub() => _abrirUrl('https://github.com/3duardobn/roleta');
+  Future<void> _abrirGitHub() => _abrirUrl('https://github.com/3duardobn/sorteio');
 
   Future<void> _abrirSite() => _abrirUrl('https://edbn.dev');
 
@@ -109,7 +109,7 @@ class SettingsScreen extends StatelessWidget {
     try {
       final caminho = await FilePicker.saveFile(
         dialogTitle: l10n.exportSave,
-        fileName: 'roleta_backup.json',
+        fileName: 'sorteio_backup.json',
         type: FileType.custom,
         allowedExtensions: ['json'],
         bytes: utf8.encode(json),

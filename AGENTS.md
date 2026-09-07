@@ -1,6 +1,6 @@
-# AGENTS.md — Roleta
+# AGENTS.md — Sorteio
 
-App Flutter Android "Roleta" (`dev.edbn.roleta`).
+App Flutter Android "Sorteio" (`dev.edbn.sorteio`).
 
 ## Build
 

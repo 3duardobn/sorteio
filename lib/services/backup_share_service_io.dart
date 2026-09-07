@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ import 'package:share_plus/share_plus.dart';
 
 Future<void> compartilharBackup(String json, String assunto) async {
   final dir = Directory.systemTemp;
-  final arquivo = File('${dir.path}/roleta_backup.json');
+  final arquivo = File('${dir.path}/sorteio_backup.json');
   await arquivo.writeAsString(json);
   await SharePlus.instance.share(
     ShareParams(files: [XFile(arquivo.path)], subject: assunto),

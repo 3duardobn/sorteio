@@ -1,11 +1,11 @@
 {
   "@@locale": "es",
-  "homeTitle": "Ruletas",
-  "newRoulette": "Nueva ruleta",
+  "homeTitle": "Sorteos",
+  "newDraw": "Nuevo sorteo",
   "themeSystem": "Sistema",
   "themeLight": "Claro",
   "themeDark": "Oscuro",
-  "emptyState": "Aún no hay ruletas.\nToca en \"Nueva ruleta\" para crear una.",
+  "emptyState": "Aún no hay sorteos.\nToca en \"Nuevo sorteo\" para crear uno.",
   "wordCount": "{count, plural, =0 {0 palabras} =1 {1 palabra} other {{count} palabras}}",
   "@wordCount": {
     "placeholders": {
@@ -16,9 +16,9 @@
   },
   "edit": "Editar",
   "delete": "Eliminar",
-  "deleteRouletteTitle": "¿Eliminar ruleta?",
-  "deleteRouletteMessage": "¿Seguro que quieres eliminar \"{name}\"? Esta acción no se puede deshacer.",
-  "@deleteRouletteMessage": {
+  "deleteDrawTitle": "¿Eliminar sorteo?",
+  "deleteDrawMessage": "¿Seguro que quieres eliminar \"{name}\"? Esta acción no se puede deshacer.",
+  "@deleteDrawMessage": {
     "placeholders": {
       "name": {
         "type": "String"
@@ -27,10 +27,10 @@
   },
   "cancel": "Cancelar",
   "settingsTitle": "Configuración",
-  "formTitleNew": "Nueva ruleta",
-  "formTitleEdit": "Editar ruleta",
+  "formTitleNew": "Nuevo sorteo",
+  "formTitleEdit": "Editar sorteo",
   "save": "Guardar",
-  "nameLabel": "Nombre de la ruleta",
+  "nameLabel": "Nombre del sorteo",
   "wordsLabel": "Palabras",
   "add": "Añadir",
   "wordLabel": "Palabra {index}",
@@ -43,11 +43,11 @@
   },
   "deleteWordTooltip": "Eliminar palabra",
   "deleteWordTitle": "¿Eliminar palabra?",
-  "deleteWordMessage": "Esta palabra se eliminará de la ruleta.",
-  "errorNameEmpty": "Indica un nombre para la ruleta.",
+  "deleteWordMessage": "Esta palabra se eliminará del sorteo.",
+  "errorNameEmpty": "Indica un nombre para el sorteo.",
   "errorWordEmpty": "Añade al menos una palabra.",
   "drawnMessage": "¡Palabra sorteada!",
-  "noWords": "Esta ruleta no tiene palabras.\nEdítala para añadir.",
+  "noWords": "Este sorteo no tiene palabras.\nEdítalo para añadir.",
   "draw": "Sortear",
   "drawing": "Sorteando…",
   "shakeTip": "Consejo: agita el teléfono para sortear.",
@@ -56,23 +56,23 @@
   "langSystem": "Predeterminado del sistema",
   "licenseSection": "Licencia",
   "licenseText": "Este es un proyecto de código libre, con licencia GNU GPL-3.0. Las artes de la aplicación son de dominio público (CC0 1.0).",
-  "licenseGithub": "github.com/3duardobn/roleta",
+  "licenseGithub": "github.com/3duardobn/sorteio",
   "contactSection": "Contacto",
   "contactSub": "Preguntas, sugerencias e informes de errores",
   "contactSite": "Sitio web",
   "contactEmail": "Correo",
   "backupSection": "Copia de seguridad",
-  "backupSub": "Guarda o comparte tus ruletas como archivo JSON.",
+  "backupSub": "Guarda o comparte tus sorteos como archivo JSON.",
   "export": "Hacer copia de seguridad",
   "exportShare": "Compartir",
   "exportSave": "Guardar archivo",
-  "exportSubject": "Copia de seguridad de la app Roleta",
-  "exportEmpty": "No hay ruletas para respaldar.",
+  "exportSubject": "Copia de seguridad de la app Sorteio",
+  "exportEmpty": "No hay sorteos para respaldar.",
   "exportSuccess": "Copia guardada.",
   "exportError": "No se pudo generar la copia de seguridad.",
   "import": "Restaurar copia de seguridad",
   "importTitle": "¿Restaurar copia de seguridad?",
-  "importMessage": "{count, plural, =1 {Esta copia contiene 1 ruleta.} other {Esta copia contiene {count} ruletas.}} Las ruletas actuales serán reemplazadas. ¿Continuar?",
+  "importMessage": "{count, plural, =1 {Esta copia contiene 1 sorteo.} other {Esta copia contiene {count} sorteos.}} Los sorteos actuales serán reemplazados. ¿Continuar?",
   "@importMessage": {
     "placeholders": {
       "count": {
@@ -80,7 +80,7 @@
       }
     }
   },
-  "importSuccess": "{count, plural, =1 {Copia restaurada: 1 ruleta.} other {Copia restaurada: {count} ruletas.}}",
+  "importSuccess": "{count, plural, =1 {Copia restaurada: 1 sorteo.} other {Copia restaurada: {count} sorteos.}}",
   "@importSuccess": {
     "placeholders": {
       "count": {
@@ -110,7 +110,7 @@
   "avoidRepeatLabel": "Evitar repetir la última palabra",
   "avoidRepeatSub": "No sortea la misma palabra dos veces seguidas.",
   "deactivateLabel": "Quitar palabra sorteada",
-  "deactivateSub": "Cada sorteo quita la palabra de la ruleta, como un sorteo que va disminuyendo.",
+  "deactivateSub": "Cada sorteo quita la palabra del sorteo, como un sorteo que va disminuyendo.",
   "allWordsDrawn": "¡Todas las palabras fueron sorteadas! Recomenzando.",
   "saveError": "No se pudo guardar. Inténtalo de nuevo.",
   "remainingWords": "{restante, plural, =0 {Ninguna palabra restante de {total}} =1 {Queda 1 palabra de {total}} other {Quedan {restante} palabras de {total}}}",

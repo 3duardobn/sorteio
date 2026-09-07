@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@ Future<void> compartilharBackup(String json, String assunto) async {
       files: [
         XFile.fromData(
           utf8.encode(json),
-          name: 'roleta_backup.json',
+          name: 'sorteio_backup.json',
           mimeType: 'application/json',
         ),
       ],

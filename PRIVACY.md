@@ -1,10 +1,10 @@
-# Política de Privacidade — Roleta
+# Política de Privacidade — Sorteio
 
 **Última atualização: 21 de agosto de 2026**
 
-*URL canônica: https://edbn.dev/privacidade/roleta/*
+*URL canônica: https://edbn.dev/privacidade/sorteio/*
 
-O aplicativo **Roleta** (`dev.edbn.roleta`) é um app gratuito e de código aberto (GPL-3.0) para sortear palavras.
+O aplicativo **Sorteio** (`dev.edbn.sorteio`) é um app gratuito e de código aberto (GPL-3.0) para sortear palavras.
 
 ## Dados que coletamos
 
@@ -20,7 +20,7 @@ O aplicativo **Roleta** (`dev.edbn.roleta`) é um app gratuito e de código aber
 O aplicativo salva localmente no seu aparelho, usando o mecanismo de
 preferências do Android (`SharedPreferences`):
 
-- **Suas roletas** — nomes e listas de palavras criadas por você;
+- **Seus sorteios** — nomes e listas de palavras criadas por você;
 - **Estatísticas de sorteio** — contagem de vezes que cada palavra foi sorteada;
 - **Tema escolhido** (claro/escuro);
 - **Idioma preferido**.
@@ -51,5 +51,5 @@ Alterações nesta política serão publicadas nesta página.
 
 ## Contato
 
-Dúvidas: abra uma issue em <https://github.com/3duardobn/roleta> ou escreva
+Dúvidas: abra uma issue em <https://github.com/3duardobn/sorteio> ou escreva
 para `eduardo@edbn.dev`.

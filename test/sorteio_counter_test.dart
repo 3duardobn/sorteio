@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -18,14 +18,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/data/app_preferences.dart';
-import 'package:roleta/data/settings_repository.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/main.dart';
-import 'package:roleta/models/caixa.dart';
-import 'package:roleta/screens/roleta_screen.dart';
-import 'package:roleta/services/shake_detector.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/data/app_preferences.dart';
+import 'package:sorteio/data/settings_repository.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/main.dart';
+import 'package:sorteio/models/caixa.dart';
+import 'package:sorteio/screens/sorteio_screen.dart';
+import 'package:sorteio/services/shake_detector.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _FakeShakeDetector extends ShakeDetector {
@@ -63,7 +63,7 @@ void main() {
       MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: RoletaScreen(
+        home: SorteioScreen(
           caixa: caixa,
           repository: repo,
           shakeDetectorBuilder: _FakeShakeDetector.new,
@@ -91,7 +91,7 @@ void main() {
       MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: RoletaScreen(
+        home: SorteioScreen(
           caixa: caixa,
           repository: repo,
           shakeDetectorBuilder: _FakeShakeDetector.new,
@@ -114,7 +114,7 @@ void main() {
       Caixa.nova(nome: 'Nomes', palavras: ['A', 'B', 'C']),
     );
 
-    await tester.pumpWidget(RoletaApp(
+    await tester.pumpWidget(SorteioApp(
         repository: repo,
         settings: AppPreferences(SettingsRepository()),
       ));
@@ -124,7 +124,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Sortear'), findsOneWidget);
 
-    // A RoletaScreen real usa sensors_plus; em teste o shake é ignorado,
+    // A SorteioScreen real usa sensors_plus; em teste o shake é ignorado,
     // mas o botão Sortear funciona normalmente.
     await sortear(tester);
 

@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@ class BackupService {
   String gerarJson(List<Caixa> caixas) {
     const encoder = JsonEncoder.withIndent('  ');
     return encoder.convert({
-      'app': 'roleta',
+      'app': 'sorteio',
       'version': _versaoAtual,
       'exportadoEm': DateTime.now().toIso8601String(),
       'caixas': caixas.map((c) => c.toJson()).toList(),

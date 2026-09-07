@@ -1,19 +1,3 @@
-// Roleta
-// Copyright (C) 2026 Eduardo Barroso Nunes
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
-//
-// SPDX-License-Identifier: GPL-3.0-only
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -119,14 +103,14 @@ abstract class AppLocalizations {
   /// No description provided for @homeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Roulettes'**
+  /// **'Draws'**
   String get homeTitle;
 
-  /// No description provided for @newRoulette.
+  /// No description provided for @newDraw.
   ///
   /// In en, this message translates to:
-  /// **'New roulette'**
-  String get newRoulette;
+  /// **'New draw'**
+  String get newDraw;
 
   /// No description provided for @themeSystem.
   ///
@@ -149,7 +133,7 @@ abstract class AppLocalizations {
   /// No description provided for @emptyState.
   ///
   /// In en, this message translates to:
-  /// **'No roulettes yet.\nTap \"New roulette\" to create one.'**
+  /// **'No draws yet.\nTap \"New draw\" to create one.'**
   String get emptyState;
 
   /// No description provided for @wordCount.
@@ -170,17 +154,17 @@ abstract class AppLocalizations {
   /// **'Delete'**
   String get delete;
 
-  /// No description provided for @deleteRouletteTitle.
+  /// No description provided for @deleteDrawTitle.
   ///
   /// In en, this message translates to:
-  /// **'Delete roulette?'**
-  String get deleteRouletteTitle;
+  /// **'Delete draw?'**
+  String get deleteDrawTitle;
 
-  /// No description provided for @deleteRouletteMessage.
+  /// No description provided for @deleteDrawMessage.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to delete \"{name}\"? This action cannot be undone.'**
-  String deleteRouletteMessage(String name);
+  String deleteDrawMessage(String name);
 
   /// No description provided for @cancel.
   ///
@@ -197,13 +181,13 @@ abstract class AppLocalizations {
   /// No description provided for @formTitleNew.
   ///
   /// In en, this message translates to:
-  /// **'New roulette'**
+  /// **'New draw'**
   String get formTitleNew;
 
   /// No description provided for @formTitleEdit.
   ///
   /// In en, this message translates to:
-  /// **'Edit roulette'**
+  /// **'Edit draw'**
   String get formTitleEdit;
 
   /// No description provided for @save.
@@ -215,7 +199,7 @@ abstract class AppLocalizations {
   /// No description provided for @nameLabel.
   ///
   /// In en, this message translates to:
-  /// **'Roulette name'**
+  /// **'Draw name'**
   String get nameLabel;
 
   /// No description provided for @wordsLabel.
@@ -251,13 +235,13 @@ abstract class AppLocalizations {
   /// No description provided for @deleteWordMessage.
   ///
   /// In en, this message translates to:
-  /// **'This word will be removed from the roulette.'**
+  /// **'This word will be removed from the draw.'**
   String get deleteWordMessage;
 
   /// No description provided for @errorNameEmpty.
   ///
   /// In en, this message translates to:
-  /// **'Enter a name for the roulette.'**
+  /// **'Enter a name for the draw.'**
   String get errorNameEmpty;
 
   /// No description provided for @errorWordEmpty.
@@ -275,7 +259,7 @@ abstract class AppLocalizations {
   /// No description provided for @noWords.
   ///
   /// In en, this message translates to:
-  /// **'This roulette has no words.\nEdit it to add some.'**
+  /// **'This draw has no words.\nEdit it to add some.'**
   String get noWords;
 
   /// No description provided for @draw.
@@ -329,7 +313,7 @@ abstract class AppLocalizations {
   /// No description provided for @licenseGithub.
   ///
   /// In en, this message translates to:
-  /// **'github.com/3duardobn/roleta'**
+  /// **'github.com/3duardobn/sorteio'**
   String get licenseGithub;
 
   /// No description provided for @contactSection.
@@ -365,7 +349,7 @@ abstract class AppLocalizations {
   /// No description provided for @backupSub.
   ///
   /// In en, this message translates to:
-  /// **'Save or share your roulettes as a JSON file.'**
+  /// **'Save or share your draws as a JSON file.'**
   String get backupSub;
 
   /// No description provided for @export.
@@ -389,13 +373,13 @@ abstract class AppLocalizations {
   /// No description provided for @exportSubject.
   ///
   /// In en, this message translates to:
-  /// **'Roleta app backup'**
+  /// **'Sorteio app backup'**
   String get exportSubject;
 
   /// No description provided for @exportEmpty.
   ///
   /// In en, this message translates to:
-  /// **'There are no roulettes to back up.'**
+  /// **'There are no draws to back up.'**
   String get exportEmpty;
 
   /// No description provided for @exportSuccess.
@@ -425,13 +409,13 @@ abstract class AppLocalizations {
   /// No description provided for @importMessage.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1 {This backup contains 1 roulette.} other {This backup contains {count} roulettes.}} Your current roulettes will be replaced. Continue?'**
+  /// **'{count, plural, =1 {This backup contains 1 draw.} other {This backup contains {count} draws.}} Your current draws will be replaced. Continue?'**
   String importMessage(int count);
 
   /// No description provided for @importSuccess.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1 {Backup restored: 1 roulette.} other {Backup restored: {count} roulettes.}}'**
+  /// **'{count, plural, =1 {Backup restored: 1 draw.} other {Backup restored: {count} draws.}}'**
   String importSuccess(int count);
 
   /// No description provided for @importError.
@@ -485,7 +469,7 @@ abstract class AppLocalizations {
   /// No description provided for @deactivateSub.
   ///
   /// In en, this message translates to:
-  /// **'Each draw removes the word from the roulette, like a raffle that shrinks.'**
+  /// **'Each draw removes the word from the draw, like a raffle that shrinks.'**
   String get deactivateSub;
 
   /// No description provided for @allWordsDrawn.

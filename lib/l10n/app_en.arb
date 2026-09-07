@@ -1,11 +1,11 @@
 {
   "@@locale": "en",
-  "homeTitle": "Roulettes",
-  "newRoulette": "New roulette",
+  "homeTitle": "Draws",
+  "newDraw": "New draw",
   "themeSystem": "System",
   "themeLight": "Light",
   "themeDark": "Dark",
-  "emptyState": "No roulettes yet.\nTap \"New roulette\" to create one.",
+  "emptyState": "No draws yet.\nTap \"New draw\" to create one.",
   "wordCount": "{count, plural, =0 {0 words} =1 {1 word} other {{count} words}}",
   "@wordCount": {
     "placeholders": {
@@ -16,9 +16,9 @@
   },
   "edit": "Edit",
   "delete": "Delete",
-  "deleteRouletteTitle": "Delete roulette?",
-  "deleteRouletteMessage": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
-  "@deleteRouletteMessage": {
+  "deleteDrawTitle": "Delete draw?",
+  "deleteDrawMessage": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+  "@deleteDrawMessage": {
     "placeholders": {
       "name": {
         "type": "String"
@@ -27,10 +27,10 @@
   },
   "cancel": "Cancel",
   "settingsTitle": "Settings",
-  "formTitleNew": "New roulette",
-  "formTitleEdit": "Edit roulette",
+  "formTitleNew": "New draw",
+  "formTitleEdit": "Edit draw",
   "save": "Save",
-  "nameLabel": "Roulette name",
+  "nameLabel": "Draw name",
   "wordsLabel": "Words",
   "add": "Add",
   "wordLabel": "Word {index}",
@@ -43,11 +43,11 @@
   },
   "deleteWordTooltip": "Delete word",
   "deleteWordTitle": "Delete word?",
-  "deleteWordMessage": "This word will be removed from the roulette.",
-  "errorNameEmpty": "Enter a name for the roulette.",
+  "deleteWordMessage": "This word will be removed from the draw.",
+  "errorNameEmpty": "Enter a name for the draw.",
   "errorWordEmpty": "Add at least one word.",
   "drawnMessage": "Word drawn!",
-  "noWords": "This roulette has no words.\nEdit it to add some.",
+  "noWords": "This draw has no words.\nEdit it to add some.",
   "draw": "Draw",
   "drawing": "Drawing…",
   "shakeTip": "Tip: shake your phone to draw.",
@@ -56,23 +56,23 @@
   "langSystem": "System default",
   "licenseSection": "License",
   "licenseText": "This is a free-code project, licensed under the GNU GPL-3.0. The app artworks are public domain (CC0 1.0).",
-  "licenseGithub": "github.com/3duardobn/roleta",
+  "licenseGithub": "github.com/3duardobn/sorteio",
   "contactSection": "Contact",
   "contactSub": "Questions, suggestions and bug reports",
   "contactSite": "Website",
   "contactEmail": "Email",
   "backupSection": "Backup",
-  "backupSub": "Save or share your roulettes as a JSON file.",
+  "backupSub": "Save or share your draws as a JSON file.",
   "export": "Make a backup",
   "exportShare": "Share",
   "exportSave": "Save file",
-  "exportSubject": "Roleta app backup",
-  "exportEmpty": "There are no roulettes to back up.",
+  "exportSubject": "Sorteio app backup",
+  "exportEmpty": "There are no draws to back up.",
   "exportSuccess": "Backup saved.",
   "exportError": "Could not generate the backup.",
   "import": "Restore backup",
   "importTitle": "Restore backup?",
-  "importMessage": "{count, plural, =1 {This backup contains 1 roulette.} other {This backup contains {count} roulettes.}} Your current roulettes will be replaced. Continue?",
+  "importMessage": "{count, plural, =1 {This backup contains 1 draw.} other {This backup contains {count} draws.}} Your current draws will be replaced. Continue?",
   "@importMessage": {
     "placeholders": {
       "count": {
@@ -80,7 +80,7 @@
       }
     }
   },
-  "importSuccess": "{count, plural, =1 {Backup restored: 1 roulette.} other {Backup restored: {count} roulettes.}}",
+  "importSuccess": "{count, plural, =1 {Backup restored: 1 draw.} other {Backup restored: {count} draws.}}",
   "@importSuccess": {
     "placeholders": {
       "count": {
@@ -110,7 +110,7 @@
   "avoidRepeatLabel": "Avoid repeating the last word",
   "avoidRepeatSub": "Does not draw the same word twice in a row.",
   "deactivateLabel": "Remove drawn word",
-  "deactivateSub": "Each draw removes the word from the roulette, like a raffle that shrinks.",
+  "deactivateSub": "Each draw removes the word from the draw, like a raffle that shrinks.",
   "allWordsDrawn": "All words have been drawn. Restarting!",
   "saveError": "Could not save. Please try again.",
   "remainingWords": "{restante, plural, =0 {No words left of {total}} =1 {1 word left of {total}} other {{restante} words left of {total}}}",

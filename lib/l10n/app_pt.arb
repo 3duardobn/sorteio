@@ -1,11 +1,11 @@
 {
   "@@locale": "pt",
-  "homeTitle": "Roletas",
-  "newRoulette": "Nova roleta",
+  "homeTitle": "Sorteios",
+  "newDraw": "Novo sorteio",
   "themeSystem": "Sistema",
   "themeLight": "Claro",
   "themeDark": "Escuro",
-  "emptyState": "Nenhuma roleta ainda.\nToque em \"Nova roleta\" para criar uma.",
+  "emptyState": "Nenhum sorteio ainda.\nToque em \"Novo sorteio\" para criar um.",
   "wordCount": "{count, plural, =0 {0 palavras} =1 {1 palavra} other {{count} palavras}}",
   "@wordCount": {
     "placeholders": {
@@ -16,9 +16,9 @@
   },
   "edit": "Editar",
   "delete": "Excluir",
-  "deleteRouletteTitle": "Excluir caixa?",
-  "deleteRouletteMessage": "Tem certeza que deseja excluir \"{name}\"? Esta ação não pode ser desfeita.",
-  "@deleteRouletteMessage": {
+  "deleteDrawTitle": "Excluir sorteio?",
+  "deleteDrawMessage": "Tem certeza que deseja excluir \"{name}\"? Esta ação não pode ser desfeita.",
+  "@deleteDrawMessage": {
     "placeholders": {
       "name": {
         "type": "String"
@@ -27,10 +27,10 @@
   },
   "cancel": "Cancelar",
   "settingsTitle": "Configurações",
-  "formTitleNew": "Nova roleta",
-  "formTitleEdit": "Editar roleta",
+  "formTitleNew": "Novo sorteio",
+  "formTitleEdit": "Editar sorteio",
   "save": "Salvar",
-  "nameLabel": "Nome da roleta",
+  "nameLabel": "Nome do sorteio",
   "wordsLabel": "Palavras",
   "add": "Adicionar",
   "wordLabel": "Palavra {index}",
@@ -43,11 +43,11 @@
   },
   "deleteWordTooltip": "Excluir palavra",
   "deleteWordTitle": "Excluir palavra?",
-  "deleteWordMessage": "Esta palavra será removida da roleta.",
-  "errorNameEmpty": "Informe um nome para a roleta.",
+  "deleteWordMessage": "Esta palavra será removida do sorteio.",
+  "errorNameEmpty": "Informe um nome para o sorteio.",
   "errorWordEmpty": "Adicione pelo menos uma palavra.",
   "drawnMessage": "Palavra sorteada!",
-  "noWords": "Esta roleta não tem palavras.\nEdite-a para adicionar.",
+  "noWords": "Este sorteio não tem palavras.\nEdite-o para adicionar.",
   "draw": "Sortear",
   "drawing": "Sorteando…",
   "shakeTip": "Dica: agite o celular para sortear.",
@@ -56,23 +56,23 @@
   "langSystem": "Padrão do sistema",
   "licenseSection": "Licença",
   "licenseText": "Este é um projeto de código livre, licenciado sob a GNU GPL-3.0. As artes do aplicativo são de domínio público (CC0 1.0).",
-  "licenseGithub": "github.com/3duardobn/roleta",
+  "licenseGithub": "github.com/3duardobn/sorteio",
   "contactSection": "Contato",
   "contactSub": "Dúvidas, sugestões e relatos de bugs",
   "contactSite": "Site",
   "contactEmail": "Email",
   "backupSection": "Backup",
-  "backupSub": "Salve ou compartilhe suas roletas como arquivo JSON.",
+  "backupSub": "Salve ou compartilhe seus sorteios como arquivo JSON.",
   "export": "Fazer backup",
   "exportShare": "Compartilhar",
   "exportSave": "Salvar arquivo",
-  "exportSubject": "Backup do aplicativo Roleta",
-  "exportEmpty": "Não há roletas para fazer backup.",
+  "exportSubject": "Backup do aplicativo Sorteio",
+  "exportEmpty": "Não há sorteios para fazer backup.",
   "exportSuccess": "Backup salvo.",
   "exportError": "Não foi possível gerar o backup.",
   "import": "Restaurar backup",
   "importTitle": "Restaurar backup?",
-  "importMessage": "{count, plural, =1 {Este backup contém 1 roleta.} other {Este backup contém {count} roletas.}} As roletas atuais serão substituídas. Continuar?",
+  "importMessage": "{count, plural, =1 {Este backup contém 1 sorteio.} other {Este backup contém {count} sorteios.}} Os sorteios atuais serão substituídos. Continuar?",
   "@importMessage": {
     "placeholders": {
       "count": {
@@ -80,7 +80,7 @@
       }
     }
   },
-  "importSuccess": "{count, plural, =1 {Backup restaurado: 1 roleta.} other {Backup restaurado: {count} roletas.}}",
+  "importSuccess": "{count, plural, =1 {Backup restaurado: 1 sorteio.} other {Backup restaurado: {count} sorteios.}}",
   "@importSuccess": {
     "placeholders": {
       "count": {
@@ -110,7 +110,7 @@
   "avoidRepeatLabel": "Evitar repetir a última palavra",
   "avoidRepeatSub": "Não sorteia a mesma palavra duas vezes seguidas.",
   "deactivateLabel": "Remover palavra sorteada",
-  "deactivateSub": "Cada sorteio remove a palavra da roleta, como um sorteio que vai diminuindo.",
+  "deactivateSub": "Cada sorteio remove a palavra do sorteio, como um sorteio que vai diminuindo.",
   "allWordsDrawn": "Todas as palavras foram sorteadas. Recomeçando!",
   "saveError": "Não foi possível salvar. Tente novamente.",
   "remainingWords": "{restante, plural, =0 {Nenhuma palavra restante de {total}} =1 {Falta 1 palavra de {total}} other {Faltam {restante} palavras de {total}}}",

@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -15,8 +15,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter_test/flutter_test.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/models/caixa.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/models/caixa.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

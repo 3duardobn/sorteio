@@ -1,4 +1,4 @@
-package dev.edbn.roleta
+package dev.edbn.sorteio
 
 import io.flutter.embedding.android.FlutterActivity
 

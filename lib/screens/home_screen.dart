@@ -1,4 +1,4 @@
-// Roleta
+// Sorteio
 // Copyright (C) 2026 Eduardo Barroso Nunes
 //
 // This program is free software: you can redistribute it and/or modify
@@ -15,15 +15,15 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 import 'package:flutter/material.dart';
-import 'package:roleta/data/app_preferences.dart';
-import 'package:roleta/data/caixa_repository.dart';
-import 'package:roleta/l10n/app_localizations.dart';
-import 'package:roleta/models/caixa.dart';
-import 'package:roleta/screens/caixa_form_screen.dart';
-import 'package:roleta/screens/estatisticas_screen.dart';
-import 'package:roleta/screens/roleta_screen.dart';
-import 'package:roleta/screens/settings_screen.dart';
-import 'package:roleta/widgets/confirm_dialog.dart';
+import 'package:sorteio/data/app_preferences.dart';
+import 'package:sorteio/data/caixa_repository.dart';
+import 'package:sorteio/l10n/app_localizations.dart';
+import 'package:sorteio/models/caixa.dart';
+import 'package:sorteio/screens/caixa_form_screen.dart';
+import 'package:sorteio/screens/estatisticas_screen.dart';
+import 'package:sorteio/screens/sorteio_screen.dart';
+import 'package:sorteio/screens/settings_screen.dart';
+import 'package:sorteio/widgets/confirm_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -85,8 +85,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final l10n = AppLocalizations.of(context)!;
     final confirmar = await confirmarAcao(
       context,
-      title: l10n.deleteRouletteTitle,
-      message: l10n.deleteRouletteMessage(caixa.nome),
+      title: l10n.deleteDrawTitle,
+      message: l10n.deleteDrawMessage(caixa.nome),
       confirmLabel: l10n.delete,
     );
     if (!confirmar || !mounted) return;
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _abrirForm(),
         icon: const Icon(Icons.add),
-        label: Text(l10n.newRoulette),
+        label: Text(l10n.newDraw),
       ),
       body: Column(
         children: [
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () async {
               await Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => RoletaScreen(
+                  builder: (_) => SorteioScreen(
                     caixa: caixa,
                     repository: widget.repository,
                   ),

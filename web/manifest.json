@@ -1,11 +1,11 @@
 {
-    "name": "Roleta",
-    "short_name": "Roleta",
+    "name": "Sorteio",
+    "short_name": "Sorteio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#6C5CE7",
     "theme_color": "#6C5CE7",
-    "description": "Roleta de palavras — sorteie uma palavra de uma lista salva no dispositivo.",
+    "description": "Sorteio de palavras — sorteie uma palavra de uma lista salva no dispositivo.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
