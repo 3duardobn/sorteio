@@ -1,0 +1,4 @@
+Version 1.0.2:
+• New name: Sorteio
+• New icon and visual identity
+• Stability updates

@@ -1,0 +1,4 @@
+Versión 1.0.2:
+• Nuevo nombre: Sorteio
+• Nuevo icono e identidad visual
+• Actualizaciones de estabilidad
