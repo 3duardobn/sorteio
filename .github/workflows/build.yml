@@ -28,9 +28,6 @@ jobs:
           channel: stable
           flutter-version: "3.41.7"
 
-      - name: Enable Android SDK cmdline tools
-        uses: android-actions/setup-android@v3
-
       - name: Install dependencies
         run: flutter pub get
 
@@ -63,19 +60,26 @@ jobs:
       - name: Build AAB (release)
         run: flutter build appbundle --release
 
+      - name: Stage release artifacts with version
+        run: |
+          VERSION="${GITHUB_REF_NAME:-v1.0.2}"
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk \
+             "dist/sorteio-${VERSION}.apk"
+          cp build/app/outputs/bundle/release/app-release.aab \
+             "dist/sorteio-${VERSION}.aab"
+          cd dist && sha256sum * > SHA256SUMS.txt
+
       - name: Verify APK signature
         run: |
           APKSIGNER="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -n1)/apksigner"
-          "$APKSIGNER" verify --verbose --print-certs \
-            build/app/outputs/flutter-apk/app-release.apk
+          "$APKSIGNER" verify --verbose --print-certs dist/sorteio-*.apk
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: release-artifacts
-          path: |
-            build/app/outputs/flutter-apk/app-release.apk
-            build/app/outputs/bundle/release/app-release.aab
+          path: dist/*
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
@@ -83,6 +87,4 @@ jobs:
         with:
           name: Sorteio ${{ github.ref_name }}
           generate_release_notes: true
-          files: |
-            build/app/outputs/flutter-apk/app-release.apk
-            build/app/outputs/bundle/release/app-release.aab
+          files: dist/*
