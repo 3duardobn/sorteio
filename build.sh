@@ -19,13 +19,21 @@ set -euo pipefail
 
 export PATH="/home/eduardo/projetos/bin/flutter/flutter/bin:$PATH"
 export ANDROID_HOME="${ANDROID_HOME:-/home/eduardo/Android/Sdk}"
-export JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}"
+if [ -z "${JAVA_HOME:-}" ] || [ ! -d "$JAVA_HOME" ]; then
+  if [ -d "$HOME/.sdkman/candidates/java/17.0.17-tem" ]; then
+    export JAVA_HOME="$HOME/.sdkman/candidates/java/17.0.17-tem"
+  elif [ -d "$HOME/.sdkman/candidates/java/current" ]; then
+    export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+  elif [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
+    export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+  fi
+fi
 
 source "$HOME/projetos/personal/keystores/signing.env"
-export KEYSTORE_PATH="$ROLETA_KEYSTORE"
-export KEYSTORE_PASSWORD="$ROLETA_PASSWORD"
-export KEY_ALIAS="$ROLETA_ALIAS"
-export KEY_PASSWORD="$ROLETA_PASSWORD"
+export KEYSTORE_PATH="${SORTEIO_KEYSTORE:-$ROLETA_KEYSTORE}"
+export KEYSTORE_PASSWORD="${SORTEIO_PASSWORD:-$ROLETA_PASSWORD}"
+export KEY_ALIAS="${SORTEIO_ALIAS:-$ROLETA_ALIAS}"
+export KEY_PASSWORD="${SORTEIO_PASSWORD:-$ROLETA_PASSWORD}"
 
 flutter config --jdk-dir="$JAVA_HOME" >/dev/null
 
