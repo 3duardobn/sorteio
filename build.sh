@@ -17,23 +17,66 @@
 # SPDX-License-Identifier: GPL-3.0-only
 set -euo pipefail
 
-export PATH="/home/eduardo/projetos/bin/flutter/flutter/bin:$PATH"
-export ANDROID_HOME="${ANDROID_HOME:-/home/eduardo/Android/Sdk}"
-if [ -z "${JAVA_HOME:-}" ] || [ ! -d "$JAVA_HOME" ]; then
-  if [ -d "$HOME/.sdkman/candidates/java/17.0.17-tem" ]; then
-    export JAVA_HOME="$HOME/.sdkman/candidates/java/17.0.17-tem"
-  elif [ -d "$HOME/.sdkman/candidates/java/current" ]; then
-    export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
-  elif [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
-    export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Flutter SDK
+if ! command -v flutter >/dev/null 2>&1; then
+  if [ -d "$HOME/sdk/flutter/bin" ]; then
+    export PATH="$HOME/sdk/flutter/bin:$PATH"
+  elif [ -d "$HOME/projetos/bin/flutter/flutter/bin" ]; then
+    export PATH="$HOME/projetos/bin/flutter/flutter/bin:$PATH"
   fi
 fi
 
-source "$HOME/projetos/personal/keystores/signing.env"
-export KEYSTORE_PATH="${SORTEIO_KEYSTORE:-$ROLETA_KEYSTORE}"
-export KEYSTORE_PASSWORD="${SORTEIO_PASSWORD:-$ROLETA_PASSWORD}"
-export KEY_ALIAS="${SORTEIO_ALIAS:-$ROLETA_ALIAS}"
-export KEY_PASSWORD="${SORTEIO_PASSWORD:-$ROLETA_PASSWORD}"
+# Android SDK
+if [ -z "${ANDROID_HOME:-}" ] || [ ! -d "$ANDROID_HOME" ]; then
+  if [ -d "$HOME/.local/share/android" ]; then
+    export ANDROID_HOME="$HOME/.local/share/android"
+  elif [ -d "$HOME/Android/Sdk" ]; then
+    export ANDROID_HOME="$HOME/Android/Sdk"
+  fi
+fi
+
+# Java 17
+if [ -z "${JAVA_HOME:-}" ] || [ ! -d "$JAVA_HOME" ]; then
+  if [ -d "/usr/lib/jvm/java-17-openjdk" ]; then
+    export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+  elif [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
+    export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+  elif [ -d "$HOME/.sdkman/candidates/java/17.0.17-tem" ]; then
+    export JAVA_HOME="$HOME/.sdkman/candidates/java/17.0.17-tem"
+  elif [ -d "$HOME/.sdkman/candidates/java/current" ]; then
+    export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+  fi
+fi
+
+# Keystore signing environment
+KEYSTORES_DIR="$SCRIPT_DIR/../keystores"
+if [ -f "$KEYSTORES_DIR/signing.env" ]; then
+  source "$KEYSTORES_DIR/signing.env"
+elif [ -f "$HOME/projetos/personal/keystores/signing.env" ]; then
+  source "$HOME/projetos/personal/keystores/signing.env"
+fi
+
+KS_PATH="${SORTEIO_KEYSTORE:-${ROLETA_KEYSTORE:-}}"
+KS_PASS="${SORTEIO_PASSWORD:-${ROLETA_PASSWORD:-}}"
+KS_ALIAS="${SORTEIO_ALIAS:-${ROLETA_ALIAS:-sorteio}}"
+
+if [ -n "$KS_PATH" ]; then
+  if [ ! -f "$KS_PATH" ] && [ -f "$KEYSTORES_DIR/sorteio.jks" ]; then
+    export KEYSTORE_PATH="$KEYSTORES_DIR/sorteio.jks"
+  elif [ ! -f "$KS_PATH" ] && [ -f "$KEYSTORES_DIR/roleta.jks" ]; then
+    export KEYSTORE_PATH="$KEYSTORES_DIR/roleta.jks"
+  else
+    export KEYSTORE_PATH="$KS_PATH"
+  fi
+  export KEYSTORE_PASSWORD="$KS_PASS"
+  export KEY_ALIAS="$KS_ALIAS"
+  export KEY_PASSWORD="$KS_PASS"
+  echo "==> Usando keystore de release: $KEYSTORE_PATH"
+else
+  echo "==> Assinatura release não configurada; o Gradle usará debug key para compilar localmente."
+fi
 
 flutter config --jdk-dir="$JAVA_HOME" >/dev/null
 

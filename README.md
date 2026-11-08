@@ -3,6 +3,7 @@
 [![License: GPL-3.0](https://img.shields.io/badge/Licença-GPL--3.0-blue.svg)](LICENSE)
 [![F-Droid](https://img.shields.io/f-droid/v/dev.edbn.sorteio.svg)](https://f-droid.org/packages/dev.edbn.sorteio/)
 [![Flutter](https://img.shields.io/badge/Flutter-3.41+-02569B.svg)](https://flutter.dev)
+[![0rwx: x](https://img.shields.io/badge/0rwx-x%20%7C%20execute-critical?style=flat-square)](https://0rwx.com)
 
 Um aplicativo Flutter (Android) para sortear palavras. Crie "sorteios" (caixas) com nome e uma lista de palavras, edite quando quiser e sorteie uma palavra aleatória — pelo botão ou agitando o celular.
 
@@ -94,9 +95,11 @@ O metadado de build vive em [`fdroid/dev.edbn.sorteio.yml`](fdroid/dev.edbn.sort
 - Descrições, changelogs e ícone da loja ficam em [`fastlane/metadata/android/`](fastlane/metadata/android) (pt-BR, en-US e es).
 - O build usa apenas o SDK do Flutter (app 100% Dart) — ver seção `Builds` do metadado.
 
-## Créditos
+## Transparência de IA (0rwx: x)
 
-Este app foi **vibe-coded** com a ajuda do [OpenCode](https://opencode.ai) e do modelo **deepseek-v4-flash**.
+Este projeto segue o padrão do **[Framework 0rwx](https://0rwx.com/)** no nível **x (Execute / "I curate")**.
+
+Este app foi *vibe-coded* com o apoio de agentes de IA (incluindo [OpenCode](https://opencode.ai), deepseek-v4-flash, Claude e Gemini). O papel humano é de curador e auditor de comportamento: definindo rumos, validando a usabilidade no Android e aprovando cada funcionalidade. Consulte [0rwx.md](0rwx.md) para detalhes da política.
 
 ## Licença
 
